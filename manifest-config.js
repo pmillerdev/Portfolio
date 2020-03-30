@@ -1,8 +1,8 @@
 const colors = require('./colors');
 
 module.exports = {
-  name: 'Mate Gatsby Starter',
-  short_name: 'Mate Gatsby Starter',
+  name: 'Peter Miller JavaScript Engineer',
+  short_name: 'Peter Miller JavaScript Engineer',
   start_url: '/',
   background_color: colors.background,
   theme_color: colors.primary,
