@@ -9,7 +9,6 @@ import { CardContainer, Card } from '../components/Card';
 import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
-import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
@@ -109,7 +108,6 @@ const Project = ({
   projectUrl,
   repositoryUrl,
   type,
-  publishedDate,
   logo,
 }) => (
   <Card p={0}>
@@ -133,13 +131,15 @@ const Project = ({
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
+            {repositoryUrl && (
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={repositoryUrl}
+                />
+              </Box>
+            )}
             <Box mx={1} fontSize={5}>
               <SocialLink
                 name="See project"
@@ -151,9 +151,6 @@ const Project = ({
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
             {type}
           </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
         </ProjectTag>
       </ImageContainer>
     </Flex>
@@ -164,9 +161,8 @@ Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
+  repositoryUrl: PropTypes.string,
   type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
@@ -188,7 +184,6 @@ const Projects = () => (
               description
               projectUrl
               repositoryUrl
-              publishedDate(formatString: "YYYY")
               type
               logo {
                 title

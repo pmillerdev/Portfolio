@@ -62,16 +62,6 @@
           "omitted": false
         },
         {
-          "id": "publishedDate",
-          "name": "PublishedDate",
-          "type": "Date",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
           "id": "logo",
           "name": "Logo",
           "type": "Link",
