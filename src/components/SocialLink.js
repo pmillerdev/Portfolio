@@ -17,13 +17,14 @@ const IconLink = styled(Link)`
   }
 `;
 
-const SocialLink = ({ fontAwesomeIcon, name, url, color }) => (
+const SocialLink = ({ fontAwesomeIcon, name, url, isFile, color }) => (
   <Tippy content={name} placement="bottom" trigger="mouseenter" arrow={false}>
     <IconLink
       href={url}
-      target="_blank"
       color={color}
-      rel="noreferrer"
+      download={isFile || false}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={name}
     >
       <FontAwesomeIcon name={fontAwesomeIcon} />
@@ -36,6 +37,7 @@ SocialLink.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   color: PropTypes.string,
+  isFile: PropTypes.bool,
 };
 
 export default SocialLink;
