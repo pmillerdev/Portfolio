@@ -1,0 +1,31 @@
+[[redirects]]
+  from = "/cv"
+  to = "/"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["GB"], Role = ["admin"]}
+
+[[redirects]]
+  from = "/about"
+  to = "/"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["GB"], Role = ["admin"]}
+
+[[redirects]]
+  from = "/projects"
+  to = "/"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["GB"], Role = ["admin"]}
+
+[[redirects]]
+  from = "/contact"
+  to = "/"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["GB"], Role = ["admin"]}    
